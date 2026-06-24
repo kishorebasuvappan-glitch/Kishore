@@ -4,9 +4,9 @@ Here's a practical Git command reference that covers the most commonly used comm
 
 ### Initialize a new repository
 
-```bash
+
 git init
-```
+
 
 **When used:** Start version control in an existing project folder.
 
@@ -14,15 +14,15 @@ git init
 
 ### Clone a repository
 
-```bash
+
 git clone <repository-url>
-```
+
 
 Example:
 
-```bash
+
 git clone https://github.com/user/project.git
-```
+
 
 **When used:** Copy an existing repository from GitHub, GitLab, etc.
 
@@ -32,9 +32,9 @@ git clone https://github.com/user/project.git
 
 ### View current status
 
-```bash
+
 git status
-```
+
 
 **When used:** See modified, staged, and untracked files.
 
@@ -42,32 +42,32 @@ git status
 
 ### View commit history
 
-```bash
+
 git log
-```
+
 
 **When used:** Show commit history.
 
 Useful variants:
 
-```bash
+
 git log --oneline
 git log --graph --all --decorate
-```
+
 
 ---
 
 ### See differences
 
-```bash
+
 git diff
-```
+
 
 **When used:** View unstaged changes.
 
-```bash
+
 git diff --staged
-```
+
 
 **When used:** View staged changes.
 
@@ -77,9 +77,9 @@ git diff --staged
 
 ### Add a specific file
 
-```bash
+
 git add file.txt
-```
+
 
 **When used:** Stage a particular file.
 
@@ -87,9 +87,9 @@ git add file.txt
 
 ### Add all files
 
-```bash
+
 git add .
-```
+
 
 **When used:** Stage all modified and new files.
 
@@ -97,9 +97,9 @@ git add .
 
 ### Add everything including deletions
 
-```bash
+
 git add -A
-```
+
 
 **When used:** Stage all changes.
 
@@ -109,9 +109,9 @@ git add -A
 
 ### Commit staged files
 
-```bash
+
 git commit -m "message"
-```
+
 
 **When used:** Save staged changes.
 
@@ -119,9 +119,9 @@ git commit -m "message"
 
 ### Add and commit tracked files
 
-```bash
+
 git commit -am "message"
-```
+
 
 **When used:** Quickly commit modified tracked files.
 
@@ -129,9 +129,9 @@ git commit -am "message"
 
 ### Amend last commit
 
-```bash
+
 git commit --amend
-```
+
 
 **When used:** Modify the latest commit.
 
@@ -141,9 +141,9 @@ git commit --amend
 
 ### Create a branch
 
-```bash
+
 git branch feature-login
-```
+
 
 **When used:** Create a new branch.
 
@@ -151,15 +151,15 @@ git branch feature-login
 
 ### List branches
 
-```bash
+
 git branch
-```
+
 
 **When used:** View local branches.
 
-```bash
+
 git branch -a
-```
+
 
 **When used:** View local and remote branches.
 
@@ -167,15 +167,15 @@ git branch -a
 
 ### Switch branch
 
-```bash
+
 git checkout feature-login
-```
+
 
 or
 
-```bash
+
 git switch feature-login
-```
+
 
 **When used:** Move to another branch.
 
@@ -183,15 +183,15 @@ git switch feature-login
 
 ### Create and switch branch
 
-```bash
+
 git checkout -b feature-login
-```
+
 
 or
 
-```bash
+
 git switch -c feature-login
-```
+
 
 **When used:** Create and switch in one command.
 
@@ -199,9 +199,9 @@ git switch -c feature-login
 
 ### Rename current branch
 
-```bash
+
 git branch -m new-name
-```
+
 
 **When used:** Rename the branch you're currently on.
 
@@ -209,9 +209,9 @@ git branch -m new-name
 
 ### Rename another branch
 
-```bash
+
 git branch -m old-name new-name
-```
+
 
 **When used:** Rename a different branch.
 
@@ -219,9 +219,9 @@ git branch -m old-name new-name
 
 ### Delete local branch
 
-```bash
+
 git branch -d feature-login
-```
+
 
 **When used:** Delete merged branch.
 
@@ -229,9 +229,9 @@ git branch -d feature-login
 
 ### Force delete branch
 
-```bash
+
 git branch -D feature-login
-```
+
 
 **When used:** Delete branch even if unmerged.
 
@@ -241,26 +241,26 @@ git branch -D feature-login
 
 ### Merge a branch
 
-```bash
+
 git merge feature-login
-```
+
 
 **When used:** Merge `feature-login` into current branch.
 
 Example:
 
-```bash
+
 git checkout main
 git merge feature-login
-```
+
 
 ---
 
 ### Fast-forward merge
 
-```bash
+
 git merge --ff feature-login
-```
+
 
 **When used:** Keep linear history when possible.
 
@@ -268,9 +268,9 @@ git merge --ff feature-login
 
 ### No fast-forward merge
 
-```bash
+
 git merge --no-ff feature-login
-```
+
 
 **When used:** Always create a merge commit.
 
@@ -278,9 +278,9 @@ git merge --no-ff feature-login
 
 ### Abort merge
 
-```bash
+
 git merge --abort
-```
+
 
 **When used:** Cancel merge after conflicts.
 
@@ -290,9 +290,9 @@ git merge --abort
 
 ### Rebase current branch
 
-```bash
+
 git rebase main
-```
+
 
 **When used:** Replay commits on top of main.
 
@@ -300,9 +300,9 @@ git rebase main
 
 ### Interactive rebase
 
-```bash
+
 git rebase -i HEAD~3
-```
+
 
 **When used:** Edit, squash, reorder commits.
 
@@ -310,9 +310,9 @@ git rebase -i HEAD~3
 
 ### Continue rebase
 
-```bash
+
 git rebase --continue
-```
+
 
 **When used:** After resolving conflicts.
 
@@ -320,9 +320,9 @@ git rebase --continue
 
 ### Abort rebase
 
-```bash
+
 git rebase --abort
-```
+
 
 **When used:** Cancel rebase.
 
@@ -332,9 +332,9 @@ git rebase --abort
 
 ### View remotes
 
-```bash
+
 git remote -v
-```
+
 
 **When used:** Show remote URLs.
 
@@ -342,9 +342,9 @@ git remote -v
 
 ### Add remote
 
-```bash
+
 git remote add origin <url>
-```
+
 
 **When used:** Connect repository to remote.
 
@@ -352,9 +352,9 @@ git remote add origin <url>
 
 ### Change remote URL
 
-```bash
+
 git remote set-url origin <new-url>
-```
+
 
 **When used:** Update remote repository URL.
 
@@ -362,9 +362,9 @@ git remote set-url origin <new-url>
 
 ### Remove remote
 
-```bash
+
 git remote remove origin
-```
+
 
 **When used:** Delete remote reference.
 
@@ -374,9 +374,9 @@ git remote remove origin
 
 ### Push current branch
 
-```bash
+
 git push origin main
-```
+
 
 **When used:** Upload commits.
 
@@ -384,9 +384,9 @@ git push origin main
 
 ### Push new branch
 
-```bash
+
 git push -u origin feature-login
-```
+
 
 **When used:** First push and set upstream.
 
@@ -394,17 +394,17 @@ git push -u origin feature-login
 
 ### Force push
 
-```bash
+
 git push --force
-```
+
 
 **When used:** Overwrite remote history.
 
 Safer:
 
-```bash
+
 git push --force-with-lease
-```
+
 
 ---
 
@@ -412,9 +412,9 @@ git push --force-with-lease
 
 ### Pull latest changes
 
-```bash
+
 git pull
-```
+
 
 **When used:** Fetch + merge.
 
@@ -422,9 +422,9 @@ git pull
 
 ### Pull specific branch
 
-```bash
+
 git pull origin main
-```
+
 
 **When used:** Pull from a specific branch.
 
@@ -432,9 +432,9 @@ git pull origin main
 
 ### Pull with rebase
 
-```bash
+
 git pull --rebase
-```
+
 
 **When used:** Keep cleaner history.
 
@@ -444,9 +444,9 @@ git pull --rebase
 
 ### Fetch remote updates
 
-```bash
+
 git fetch
-```
+
 
 **When used:** Download changes without merging.
 
@@ -454,9 +454,9 @@ git fetch
 
 ### Fetch all remotes
 
-```bash
+
 git fetch --all
-```
+
 
 **When used:** Update all remotes.
 
@@ -466,9 +466,9 @@ git fetch --all
 
 ### Save current changes
 
-```bash
+
 git stash
-```
+
 
 **When used:** Temporarily store uncommitted work.
 
@@ -476,41 +476,41 @@ git stash
 
 ### Stash with message
 
-```bash
+
 git stash push -m "work in progress"
-```
+
 
 ---
 
 ### View stashes
 
-```bash
+
 git stash list
-```
+
 
 ---
 
 ### Restore latest stash
 
-```bash
+
 git stash pop
-```
+
 
 ---
 
 ### Apply stash without deleting
 
-```bash
+
 git stash apply
-```
+
 
 ---
 
 ### Delete stash
 
-```bash
+
 git stash drop stash@{0}
-```
+
 
 ---
 
@@ -518,9 +518,9 @@ git stash drop stash@{0}
 
 ### Unstage file
 
-```bash
+
 git restore --staged file.txt
-```
+
 
 **When used:** Remove file from staging.
 
@@ -528,9 +528,9 @@ git restore --staged file.txt
 
 ### Discard local changes
 
-```bash
+
 git restore file.txt
-```
+
 
 **When used:** Revert file to last commit.
 
@@ -538,9 +538,9 @@ git restore file.txt
 
 ### Reset last commit (keep changes)
 
-```bash
+
 git reset --soft HEAD~1
-```
+
 
 **When used:** Undo commit but keep changes staged.
 
@@ -548,17 +548,17 @@ git reset --soft HEAD~1
 
 ### Reset commit and unstage changes
 
-```bash
+
 git reset --mixed HEAD~1
-```
+
 
 ---
 
 ### Delete commit and changes
 
-```bash
+
 git reset --hard HEAD~1
-```
+
 
 **Warning:** Data loss possible.
 
@@ -568,9 +568,9 @@ git reset --hard HEAD~1
 
 ### Pick a commit
 
-```bash
+
 git cherry-pick <commit-hash>
-```
+
 
 **When used:** Apply a commit from another branch.
 
@@ -580,41 +580,41 @@ git cherry-pick <commit-hash>
 
 ### Create tag
 
-```bash
+
 git tag v1.0
-```
+
 
 ---
 
 ### Annotated tag
 
-```bash
+
 git tag -a v1.0 -m "Version 1.0"
-```
+
 
 ---
 
 ### List tags
 
-```bash
+
 git tag
-```
+
 
 ---
 
 ### Push tag
 
-```bash
+
 git push origin v1.0
-```
+
 
 ---
 
 ### Push all tags
 
-```bash
+
 git push --tags
-```
+
 
 ---
 
@@ -622,25 +622,25 @@ git push --tags
 
 ### Show commit details
 
-```bash
+
 git show
-```
+
 
 ---
 
 ### Show branch history graph
 
-```bash
+
 git log --oneline --graph --decorate --all
-```
+
 
 ---
 
 ### Show file changes by author
 
-```bash
+
 git blame file.txt
-```
+
 
 ---
 
@@ -648,27 +648,27 @@ git blame file.txt
 
 Rename `master` to `main`:
 
-```bash
+
 git branch -m master main
-```
+
 
 Push new branch:
 
-```bash
+
 git push -u origin main
-```
+
 
 Delete old remote branch:
 
-```bash
+
 git push origin --delete master
-```
+
 
 Update remote HEAD:
 
-```bash
+
 git remote set-head origin main
-```
+
 
 ---
 
@@ -676,44 +676,44 @@ git remote set-head origin main
 
 ### Create feature branch
 
-```bash
+
 git checkout -b feature-auth
-```
+
 
 ### Make changes
 
 ### Stage changes
 
-```bash
+
 git add .
-```
+
 
 ### Commit
 
-```bash
+
 git commit -m "Add login functionality"
-```
+
 
 ### Push branch
 
-```bash
+
 git push -u origin feature-auth
-```
+
 
 ### Merge into main
 
-```bash
+
 git checkout main
 git pull
 git merge feature-auth
 git push origin main
-```
+
 
 ### Delete feature branch
 
-```bash
+
 git branch -d feature-auth
-```
+
 
 ---
 
@@ -721,30 +721,30 @@ git branch -d feature-auth
 
 When merge conflict occurs:
 
-```bash
+
 git merge feature-auth
-```
+
 
 Resolve files manually.
 
 Then:
 
-```bash
+
 git add .
 git commit
-```
+
 
 Or abort:
 
-```bash
+
 git merge --abort
-```
+
 
 ---
 
 # 20. Most Important Commands to Memorize
 
-```bash
+
 git init
 git clone
 git status
@@ -763,6 +763,7 @@ git log --oneline
 git reset --hard HEAD~1
 git cherry-pick commit-id
 git tag
-```
+
 
 These cover roughly 90–95% of day-to-day Git work in professional development.
+
