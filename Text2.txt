@@ -1,0 +1,768 @@
+Here's a practical Git command reference that covers the most commonly used commands, including branching, merging, renaming branches, remotes, stashing, tags, undo operations, and more.
+
+# 1. Repository Setup
+
+### Initialize a new repository
+
+```bash
+git init
+```
+
+**When used:** Start version control in an existing project folder.
+
+---
+
+### Clone a repository
+
+```bash
+git clone <repository-url>
+```
+
+Example:
+
+```bash
+git clone https://github.com/user/project.git
+```
+
+**When used:** Copy an existing repository from GitHub, GitLab, etc.
+
+---
+
+# 2. Checking Repository Status
+
+### View current status
+
+```bash
+git status
+```
+
+**When used:** See modified, staged, and untracked files.
+
+---
+
+### View commit history
+
+```bash
+git log
+```
+
+**When used:** Show commit history.
+
+Useful variants:
+
+```bash
+git log --oneline
+git log --graph --all --decorate
+```
+
+---
+
+### See differences
+
+```bash
+git diff
+```
+
+**When used:** View unstaged changes.
+
+```bash
+git diff --staged
+```
+
+**When used:** View staged changes.
+
+---
+
+# 3. Adding Files
+
+### Add a specific file
+
+```bash
+git add file.txt
+```
+
+**When used:** Stage a particular file.
+
+---
+
+### Add all files
+
+```bash
+git add .
+```
+
+**When used:** Stage all modified and new files.
+
+---
+
+### Add everything including deletions
+
+```bash
+git add -A
+```
+
+**When used:** Stage all changes.
+
+---
+
+# 4. Committing Changes
+
+### Commit staged files
+
+```bash
+git commit -m "message"
+```
+
+**When used:** Save staged changes.
+
+---
+
+### Add and commit tracked files
+
+```bash
+git commit -am "message"
+```
+
+**When used:** Quickly commit modified tracked files.
+
+---
+
+### Amend last commit
+
+```bash
+git commit --amend
+```
+
+**When used:** Modify the latest commit.
+
+---
+
+# 5. Branch Operations
+
+### Create a branch
+
+```bash
+git branch feature-login
+```
+
+**When used:** Create a new branch.
+
+---
+
+### List branches
+
+```bash
+git branch
+```
+
+**When used:** View local branches.
+
+```bash
+git branch -a
+```
+
+**When used:** View local and remote branches.
+
+---
+
+### Switch branch
+
+```bash
+git checkout feature-login
+```
+
+or
+
+```bash
+git switch feature-login
+```
+
+**When used:** Move to another branch.
+
+---
+
+### Create and switch branch
+
+```bash
+git checkout -b feature-login
+```
+
+or
+
+```bash
+git switch -c feature-login
+```
+
+**When used:** Create and switch in one command.
+
+---
+
+### Rename current branch
+
+```bash
+git branch -m new-name
+```
+
+**When used:** Rename the branch you're currently on.
+
+---
+
+### Rename another branch
+
+```bash
+git branch -m old-name new-name
+```
+
+**When used:** Rename a different branch.
+
+---
+
+### Delete local branch
+
+```bash
+git branch -d feature-login
+```
+
+**When used:** Delete merged branch.
+
+---
+
+### Force delete branch
+
+```bash
+git branch -D feature-login
+```
+
+**When used:** Delete branch even if unmerged.
+
+---
+
+# 6. Merge Operations
+
+### Merge a branch
+
+```bash
+git merge feature-login
+```
+
+**When used:** Merge `feature-login` into current branch.
+
+Example:
+
+```bash
+git checkout main
+git merge feature-login
+```
+
+---
+
+### Fast-forward merge
+
+```bash
+git merge --ff feature-login
+```
+
+**When used:** Keep linear history when possible.
+
+---
+
+### No fast-forward merge
+
+```bash
+git merge --no-ff feature-login
+```
+
+**When used:** Always create a merge commit.
+
+---
+
+### Abort merge
+
+```bash
+git merge --abort
+```
+
+**When used:** Cancel merge after conflicts.
+
+---
+
+# 7. Rebase Operations
+
+### Rebase current branch
+
+```bash
+git rebase main
+```
+
+**When used:** Replay commits on top of main.
+
+---
+
+### Interactive rebase
+
+```bash
+git rebase -i HEAD~3
+```
+
+**When used:** Edit, squash, reorder commits.
+
+---
+
+### Continue rebase
+
+```bash
+git rebase --continue
+```
+
+**When used:** After resolving conflicts.
+
+---
+
+### Abort rebase
+
+```bash
+git rebase --abort
+```
+
+**When used:** Cancel rebase.
+
+---
+
+# 8. Remote Repository Commands
+
+### View remotes
+
+```bash
+git remote -v
+```
+
+**When used:** Show remote URLs.
+
+---
+
+### Add remote
+
+```bash
+git remote add origin <url>
+```
+
+**When used:** Connect repository to remote.
+
+---
+
+### Change remote URL
+
+```bash
+git remote set-url origin <new-url>
+```
+
+**When used:** Update remote repository URL.
+
+---
+
+### Remove remote
+
+```bash
+git remote remove origin
+```
+
+**When used:** Delete remote reference.
+
+---
+
+# 9. Push Commands
+
+### Push current branch
+
+```bash
+git push origin main
+```
+
+**When used:** Upload commits.
+
+---
+
+### Push new branch
+
+```bash
+git push -u origin feature-login
+```
+
+**When used:** First push and set upstream.
+
+---
+
+### Force push
+
+```bash
+git push --force
+```
+
+**When used:** Overwrite remote history.
+
+Safer:
+
+```bash
+git push --force-with-lease
+```
+
+---
+
+# 10. Pull Commands
+
+### Pull latest changes
+
+```bash
+git pull
+```
+
+**When used:** Fetch + merge.
+
+---
+
+### Pull specific branch
+
+```bash
+git pull origin main
+```
+
+**When used:** Pull from a specific branch.
+
+---
+
+### Pull with rebase
+
+```bash
+git pull --rebase
+```
+
+**When used:** Keep cleaner history.
+
+---
+
+# 11. Fetch Commands
+
+### Fetch remote updates
+
+```bash
+git fetch
+```
+
+**When used:** Download changes without merging.
+
+---
+
+### Fetch all remotes
+
+```bash
+git fetch --all
+```
+
+**When used:** Update all remotes.
+
+---
+
+# 12. Stash Commands
+
+### Save current changes
+
+```bash
+git stash
+```
+
+**When used:** Temporarily store uncommitted work.
+
+---
+
+### Stash with message
+
+```bash
+git stash push -m "work in progress"
+```
+
+---
+
+### View stashes
+
+```bash
+git stash list
+```
+
+---
+
+### Restore latest stash
+
+```bash
+git stash pop
+```
+
+---
+
+### Apply stash without deleting
+
+```bash
+git stash apply
+```
+
+---
+
+### Delete stash
+
+```bash
+git stash drop stash@{0}
+```
+
+---
+
+# 13. Undo Operations
+
+### Unstage file
+
+```bash
+git restore --staged file.txt
+```
+
+**When used:** Remove file from staging.
+
+---
+
+### Discard local changes
+
+```bash
+git restore file.txt
+```
+
+**When used:** Revert file to last commit.
+
+---
+
+### Reset last commit (keep changes)
+
+```bash
+git reset --soft HEAD~1
+```
+
+**When used:** Undo commit but keep changes staged.
+
+---
+
+### Reset commit and unstage changes
+
+```bash
+git reset --mixed HEAD~1
+```
+
+---
+
+### Delete commit and changes
+
+```bash
+git reset --hard HEAD~1
+```
+
+**Warning:** Data loss possible.
+
+---
+
+# 14. Cherry-Pick
+
+### Pick a commit
+
+```bash
+git cherry-pick <commit-hash>
+```
+
+**When used:** Apply a commit from another branch.
+
+---
+
+# 15. Tags
+
+### Create tag
+
+```bash
+git tag v1.0
+```
+
+---
+
+### Annotated tag
+
+```bash
+git tag -a v1.0 -m "Version 1.0"
+```
+
+---
+
+### List tags
+
+```bash
+git tag
+```
+
+---
+
+### Push tag
+
+```bash
+git push origin v1.0
+```
+
+---
+
+### Push all tags
+
+```bash
+git push --tags
+```
+
+---
+
+# 16. Viewing Information
+
+### Show commit details
+
+```bash
+git show
+```
+
+---
+
+### Show branch history graph
+
+```bash
+git log --oneline --graph --decorate --all
+```
+
+---
+
+### Show file changes by author
+
+```bash
+git blame file.txt
+```
+
+---
+
+# 17. Rename Main Branch Example
+
+Rename `master` to `main`:
+
+```bash
+git branch -m master main
+```
+
+Push new branch:
+
+```bash
+git push -u origin main
+```
+
+Delete old remote branch:
+
+```bash
+git push origin --delete master
+```
+
+Update remote HEAD:
+
+```bash
+git remote set-head origin main
+```
+
+---
+
+# 18. Useful Daily Workflow
+
+### Create feature branch
+
+```bash
+git checkout -b feature-auth
+```
+
+### Make changes
+
+### Stage changes
+
+```bash
+git add .
+```
+
+### Commit
+
+```bash
+git commit -m "Add login functionality"
+```
+
+### Push branch
+
+```bash
+git push -u origin feature-auth
+```
+
+### Merge into main
+
+```bash
+git checkout main
+git pull
+git merge feature-auth
+git push origin main
+```
+
+### Delete feature branch
+
+```bash
+git branch -d feature-auth
+```
+
+---
+
+# 19. Git Conflict Resolution
+
+When merge conflict occurs:
+
+```bash
+git merge feature-auth
+```
+
+Resolve files manually.
+
+Then:
+
+```bash
+git add .
+git commit
+```
+
+Or abort:
+
+```bash
+git merge --abort
+```
+
+---
+
+# 20. Most Important Commands to Memorize
+
+```bash
+git init
+git clone
+git status
+git add .
+git commit -m "message"
+git push
+git pull
+git fetch
+git branch
+git checkout -b branch-name
+git switch branch-name
+git merge branch-name
+git rebase main
+git stash
+git log --oneline
+git reset --hard HEAD~1
+git cherry-pick commit-id
+git tag
+```
+
+These cover roughly 90–95% of day-to-day Git work in professional development.
